@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/feed2.css' %}"/>
+    <title>🎥 🍿</title>
+</head>
+
+<body>
+    <h3>🎥PopCorn Feed🍿</h3>
+    <div id = "root">
+        {% if news %}
+            <ul>
+            {% for item in news %}
+                <div class = 'box'><a href="{{ item.link }}">{{ item.title }}</a></div>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No news are available.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
